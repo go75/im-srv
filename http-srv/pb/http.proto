@@ -1,0 +1,44 @@
+syntax="proto3";
+option go_package=".;pb";
+
+service HTTP{
+    // 创建用户
+    rpc UserRegist(UserRegistInfo) returns (UserRegistRes);
+    // 用户登录
+    rpc UserLogin(UserLoginInfo) returns (UserLoginRes);
+    // 创建群聊
+    rpc GroupRegist(GroupRegistInfo) returns (GroupRegistRes);
+}
+
+message UserRegistInfo{
+    string name = 1;
+    string pwd = 2;
+}
+
+message UserRegistRes {
+    bool ok = 1;
+    string msg = 2;
+}
+
+message UserLoginInfo{
+    string name = 1;
+    string pwd = 2;
+}
+
+message UserLoginRes {
+    uint32 ID = 1;
+    string Name = 2;
+    string Token = 3;
+}
+
+message GroupRegistInfo{
+    uint32 masterId = 1;
+    string name  = 2;
+    string introduce = 3;
+}
+
+message GroupRegistRes {
+    bool ok = 1;
+    string msg = 2;
+    uint32 groupId = 3;
+}

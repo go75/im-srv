@@ -1,0 +1,16 @@
+{
+    "Server":{
+        "Addr": "127.0.0.1:8001"
+    },
+    "MySQL":{
+        "DSN": "root:1234@tcp(127.0.0.1:3306)/im?charset=utf8mb4&parseTime=True&loc=Local",
+        "SlowThreshold": 1000,
+        "LogLevel": 4,
+        "Colorful": true
+    },
+    "Etcd":{
+        "ServiceName": "ws-srv",
+        "Endpoints":  ["127.0.0.1:2379"],
+        "TTL": 600
+    }
+}
